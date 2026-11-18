@@ -1,8 +1,8 @@
 {
   "short_name": "HomePlate",
-  "name": "HomePlate — Global Student Life & Family Recipe Platform",
-  "start_url": "/",
+  "name": "HomePlate — 글로벌 유학생 라이프 & 소통 플랫폼",
+  "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#f59e0b",
-  "background_color": "#0f172a"
+  "background_color": "#FDF8F3",
+  "theme_color": "#D96B43"
 }
