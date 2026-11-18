@@ -1,9 +1,8 @@
 {
-  "short_name": "Pi-Bridge",
-  "name": "Pi-Bridge: Global Student Life & Family Platform",
+  "short_name": "HomePlate",
+  "name": "HomePlate — Global Student Life & Family Recipe Platform",
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#f59e0b",
   "background_color": "#0f172a"
 }
-
