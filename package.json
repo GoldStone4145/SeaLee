@@ -1,8 +1,8 @@
 {
-  "name": "homeplate-fullstack",
+  "name": "homeplate-pi-hackathon-2026",
   "private": true,
-  "version": "4.0.0",
-  "description": "HomePlate - 2026 Pi Hackathon Global Student Life, Relational Mind-Map & Recipe Hub",
+  "version": "5.0.0",
+  "description": "HomePlate — Pi Hackathon 2026 Global Student Life, Address Book & Recipe Platform",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,17 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "lucide-react": "^0.292.0",
+    "lucide-react": "^0.344.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
-    "@vitejs/plugin-react": "^4.2.0",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.5",
-    "vite": "^5.0.0"
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.18",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.1.4"
   }
 }
