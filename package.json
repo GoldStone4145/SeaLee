@@ -1,8 +1,8 @@
 {
-  "name": "pi-bridge-fullstack",
+  "name": "homeplate-fullstack",
   "private": true,
-  "version": "2.0.0",
-  "description": "2026 Pi Hackathon - Global Student & Family Bridge Platform",
+  "version": "4.0.0",
+  "description": "HomePlate - 2026 Pi Hackathon Global Student Life, Relational Mind-Map & Recipe Hub",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -24,4 +24,3 @@
     "vite": "^5.0.0"
   }
 }
-
