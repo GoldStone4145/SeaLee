@@ -1,1 +1,46 @@
-
+{
+  "langLabel": "🇰🇷 한국어",
+  "subtitle": "Pi SDK v2.0 연동 • 글로벌 유학생 소통 & 라이프 플랫폼",
+  "mobileView": "모바일뷰",
+  "wideView": "와이드뷰",
+  "piAuthBtn": "Pi인증·VIP",
+  "ukCity": "영국 런던",
+  "krCity": "한국 서울",
+  "hours": "시간",
+  "dstOn": "서머타임 ON",
+  "dstToggle": "서머타임 전환",
+  "myStatus": "내 현재 상태 (가족 공유):",
+  "presetRealtime": "실시간",
+  "presetUk6am": "UK 6AM(수면)",
+  "presetLecture": "수업중",
+  "presetGolden": "골든타임",
+  "autoNotice": "자동 안내:",
+  "editMsg": "문구 수정",
+  "saveBtn": "저장",
+  "launcherTitle": "기능 바로가기 런처",
+  "launcherSub": "아이콘을 눌러 진입하세요",
+  "homeBoardTitle": "내가 설정한 홈 보드",
+  "showingCount": "개 표시 중",
+  "editWidgets": "홈 위젯 편집",
+  "backToHome": "대시보드 홈으로",
+  "dockHome": "홈 보드",
+  "dockWallet": "Pi지갑",
+  "dockQuests": "퀘스트",
+  "dockRecipes": "호가창",
+  "dockCalls": "안심통화",
+  "dockCalendar": "캘린더",
+  "statusModes": {
+    "lecture": "수업 중",
+    "sleeping": "수면 모드",
+    "dnd": "방해 금지",
+    "available": "소통 가능"
+  },
+  "launcherNames": {
+    "wallet": { "name": "Pi 지갑·SDK", "sub": "π결제·보상출금" },
+    "quests": { "name": "AI 퀘스트", "sub": "일상·과제 보상" },
+    "recipes": { "name": "레시피 호가창", "sub": "자취·가족 수익화" },
+    "calls": { "name": "안심 무료통화", "sub": "시차 가드·무료통화" },
+    "calendar": { "name": "문화 캘린더", "sub": "시간표·영국기념일" },
+    "analytics": { "name": "대화 패턴 분석", "sub": "100% 로컬 보안" }
+  }
+}
