@@ -1,6 +1,6 @@
-import React from 'react';
-import { RefreshCw, Bell } from 'lucide-react';
-import { STUDENT_STATUS_MODES } from '../../data/initialData.js';
+import React, { useState } from 'react';
+import { RefreshCw } from 'lucide-react';
+import { STUDENT_STATUS_MODES } from '../../constants/themes';
 
 export default function DualClockBar({
   theme,
@@ -8,50 +8,48 @@ export default function DualClockBar({
   timeInfo,
   simulateSummerTime,
   setSimulateSummerTime,
-  currentStatusObj,
+  timePreset,
+  onSelectTimePreset,
   studentStatusId,
   setStudentStatusId,
-  timePreset,
-  handleSelectTimePreset,
-  isEditingStatusMsg,
-  setIsEditingStatusMsg,
+  currentStatusObj,
   customStatusNote,
   setCustomStatusNote,
   showNotification
 }) {
+  const [isEditingStatusMsg, setIsEditingStatusMsg] = useState(false);
+
   return (
-    <section className={`p-3.5 sm:p-4 rounded-3xl border ${theme.card} mb-4`}>
-      <div className="grid grid-cols-11 items-center gap-1 sm:gap-2 pb-3 border-b border-slate-500/15">
+    <section className={`p-3.5 rounded-3xl border ${theme.card} mb-4`}>
+      <div className="grid grid-cols-11 items-center gap-1 pb-2.5 border-b border-slate-500/15">
+        {/* 영국 시계 */}
         <div className="col-span-4 flex items-center gap-2">
-          <span className="text-xl sm:text-2xl shrink-0">🇬🇧</span>
+          <span className="text-xl">🇬🇧</span>
           <div className="min-w-0">
             <div className="flex items-center gap-1">
-              <span className={`text-[10px] font-bold uppercase ${theme.subtext} truncate`}>{t.ukCity}</span>
-              <span className="text-[9px] px-1 py-0.2 rounded bg-indigo-500/15 text-indigo-400 font-bold">
+              <span className={`text-[10px] font-bold ${theme.subtext} truncate`}>{t.ukCity}</span>
+              <span className="text-[9px] px-1 rounded bg-indigo-500/15 text-indigo-400 font-bold">
                 {simulateSummerTime ? 'BST' : 'GMT'}
               </span>
             </div>
-            <div className="text-sm sm:text-lg font-black tabular-nums tracking-tight truncate">
-              {timeInfo.londonTimeStr}
-            </div>
+            <div className="text-sm sm:text-base font-black tabular-nums truncate">{timeInfo.londonTimeStr}</div>
           </div>
         </div>
 
+        {/* 시차 & 서머타임 스위치 */}
         <div className="col-span-3 flex flex-col items-center justify-center text-center">
           <button
             onClick={() => {
               setSimulateSummerTime(!simulateSummerTime);
               showNotification(
-                !simulateSummerTime
-                  ? '☀️ 영국 서머타임(BST) 적용! 한국과의 시차가 8시간으로 달라집니다.'
-                  : '❄️ 영국 표준시(GMT) 적용! 한국과의 시차가 9시간으로 설정됩니다.'
+                !simulateSummerTime ? '☀️ 영국 서머타임(BST) 적용: 시차 8시간' : '❄️ 영국 표준시(GMT) 적용: 시차 9시간'
               );
             }}
-            className={`px-2 py-1 rounded-xl text-[10px] font-extrabold border transition flex items-center gap-1 ${
+            className={`px-2 py-1 rounded-xl text-[10px] font-extrabold border flex items-center gap-1 ${
               simulateSummerTime ? 'bg-amber-500/20 text-amber-500 border-amber-500/40' : theme.accentSoft
             }`}
           >
-            <RefreshCw className="w-3 h-3 shrink-0" />
+            <RefreshCw className="w-3 h-3" />
             <span>-{timeInfo.timeDiffHours}{t.hours}</span>
           </button>
           <span className={`text-[9px] mt-0.5 ${theme.subtext}`}>
@@ -59,36 +57,36 @@ export default function DualClockBar({
           </span>
         </div>
 
+        {/* 한국 시계 */}
         <div className="col-span-4 flex items-center justify-end gap-2 text-right">
           <div className="min-w-0">
             <div className="flex items-center justify-end gap-1">
-              <span className="text-[9px] px-1 py-0.2 rounded bg-emerald-500/15 text-emerald-500 font-bold">KST</span>
-              <span className={`text-[10px] font-bold uppercase ${theme.subtext} truncate`}>{t.krCity}</span>
+              <span className="text-[9px] px-1 rounded bg-emerald-500/15 text-emerald-500 font-bold">KST</span>
+              <span className={`text-[10px] font-bold ${theme.subtext} truncate`}>{t.krCity}</span>
             </div>
-            <div className="text-sm sm:text-lg font-black tabular-nums tracking-tight truncate">
-              {timeInfo.seoulTimeStr}
-            </div>
+            <div className="text-sm sm:text-base font-black tabular-nums truncate">{timeInfo.seoulTimeStr}</div>
           </div>
-          <span className="text-xl sm:text-2xl shrink-0">🇰🇷</span>
+          <span className="text-xl">🇰🇷</span>
         </div>
       </div>
 
+      {/* 유학생 현재 상태 및 시간대 시뮬레이터 */}
       <div className="pt-2.5 flex flex-col gap-2">
         <div className="flex items-center justify-between gap-2 flex-wrap">
           <div className="flex items-center gap-1.5">
-            <span className={`w-2.5 h-2.5 rounded-full animate-pulse ${currentStatusObj.dot}`} />
-            <span className="text-[11px] font-extrabold">{t.myStatus}</span>
+            <span className={`w-2 h-2 rounded-full animate-pulse ${currentStatusObj.dot}`} />
+            <span className="text-[11px] font-extrabold">내 현재 상태 (가족 공유):</span>
           </div>
           <div className="flex items-center gap-1">
             {[
-              { id: 'realtime', label: t.presetRealtime },
-              { id: 'uk_6am', label: t.presetUk6am },
-              { id: 'uk_lecture', label: t.presetLecture },
-              { id: 'golden_time', label: t.presetGolden }
+              { id: 'realtime', label: '실시간' },
+              { id: 'uk_6am', label: 'UK 6AM(수면)' },
+              { id: 'uk_lecture', label: '수업중' },
+              { id: 'golden_time', label: '골든타임' }
             ].map((p) => (
               <button
                 key={p.id}
-                onClick={() => handleSelectTimePreset(p.id)}
+                onClick={() => onSelectTimePreset(p.id)}
                 className={`px-1.5 py-0.5 rounded-md text-[10px] font-bold transition ${
                   timePreset === p.id ? theme.accent : theme.badge
                 }`}
@@ -99,7 +97,7 @@ export default function DualClockBar({
           </div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
+        <div className="grid grid-cols-4 gap-1.5">
           {STUDENT_STATUS_MODES.map((mode) => {
             const IconComp = mode.icon;
             const isSelected = studentStatusId === mode.id;
@@ -108,22 +106,20 @@ export default function DualClockBar({
                 key={mode.id}
                 onClick={() => {
                   setStudentStatusId(mode.id);
-                  showNotification(`🔔 [${t.statusModes[mode.id]}](으)로 변경되었습니다.`);
+                  showNotification(`🔔 내 상태가 [${mode.label}](으)로 변경되었습니다.`);
                 }}
-                className={`px-2.5 py-1.5 rounded-xl text-[11px] font-bold border transition flex items-center justify-center gap-1.5 ${
-                  isSelected
-                    ? mode.color + ' ring-1 ring-current/40 shadow-sm'
-                    : `${theme.badge} border-transparent opacity-75 hover:opacity-100`
+                className={`px-2 py-1.5 rounded-xl text-[11px] font-bold border transition flex items-center justify-center gap-1 ${
+                  isSelected ? mode.color + ' ring-1 ring-current/40' : `${theme.badge} border-transparent opacity-75`
                 }`}
               >
                 <IconComp className="w-3.5 h-3.5 shrink-0" />
-                <span className="truncate">{t.statusModes[mode.id]}</span>
+                <span className="truncate">{mode.label}</span>
               </button>
             );
           })}
         </div>
 
-        <div className={`px-3 py-2 rounded-2xl border text-[11px] flex items-center justify-between gap-2 ${theme.accentSoft}`}>
+        <div className={`px-3 py-1.5 rounded-xl border text-[11px] flex items-center justify-between gap-2 ${theme.accentSoft}`}>
           {isEditingStatusMsg ? (
             <div className="flex items-center gap-1.5 w-full">
               <input
@@ -137,22 +133,16 @@ export default function DualClockBar({
                 onClick={() => setIsEditingStatusMsg(false)}
                 className={`px-2.5 py-1 rounded-lg font-bold text-[11px] ${theme.accent}`}
               >
-                {t.saveBtn}
+                저장
               </button>
             </div>
           ) : (
             <>
-              <div className="flex items-center gap-1.5 min-w-0">
-                <Bell className="w-3.5 h-3.5 shrink-0" />
-                <span className="truncate">
-                  <strong>{t.autoNotice}</strong> "{customStatusNote || currentStatusObj.autoMessage}"
-                </span>
-              </div>
-              <button
-                onClick={() => setIsEditingStatusMsg(true)}
-                className="text-[10px] font-bold underline shrink-0 opacity-80 hover:opacity-100"
-              >
-                {t.editMsg}
+              <span className="truncate">
+                <strong>자동 안내:</strong> "{customStatusNote || currentStatusObj.autoMessage}"
+              </span>
+              <button onClick={() => setIsEditingStatusMsg(true)} className="text-[10px] font-bold underline shrink-0">
+                문구 수정
               </button>
             </>
           )}
