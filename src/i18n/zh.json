@@ -1,1 +1,46 @@
-
+{
+  "langLabel": "🇨🇳 中文",
+  "subtitle": "Pi SDK v2.0 • 海外留学生生活与亲情沟通平台",
+  "mobileView": "手机视图",
+  "wideView": "宽屏视图",
+  "piAuthBtn": "Pi认证·VIP",
+  "ukCity": "英国 伦敦",
+  "krCity": "韩国 首尔",
+  "hours": "小时",
+  "dstOn": "夏令时 ON",
+  "dstToggle": "切换夏令时",
+  "myStatus": "当前状态 (家人共享):",
+  "presetRealtime": "实时",
+  "presetUk6am": "英国6点(睡眠)",
+  "presetLecture": "上课中",
+  "presetGolden": "黄金时间",
+  "autoNotice": "自动回复:",
+  "editMsg": "修改",
+  "saveBtn": "保存",
+  "launcherTitle": "核心功能启动器",
+  "launcherSub": "点击图标进入对应功能",
+  "homeBoardTitle": "自定义首页看板",
+  "showingCount": "个已启用",
+  "editWidgets": "编辑组件",
+  "backToHome": "返回首页",
+  "dockHome": "首页",
+  "dockWallet": "Pi钱包",
+  "dockQuests": "AI任务",
+  "dockRecipes": "食谱行情",
+  "dockCalls": "安心通话",
+  "dockCalendar": "文化日历",
+  "statusModes": {
+    "lecture": "上课中",
+    "sleeping": "睡眠模式",
+    "dnd": "免打扰",
+    "available": "可以通话"
+  },
+  "launcherNames": {
+    "wallet": { "name": "Pi钱包·SDK", "sub": "π支付与提现" },
+    "quests": { "name": "AI生活任务", "sub": "日常打卡奖励" },
+    "recipes": { "name": "食谱实时榜", "sub": "留学做饭创收" },
+    "calls": { "name": "安心免费通话", "sub": "时差保护提醒" },
+    "calendar": { "name": "跨国文化日历", "sub": "课表与节日卡" },
+    "analytics": { "name": "对话趋势分析", "sub": "100%本地隐私" }
+  }
+}
