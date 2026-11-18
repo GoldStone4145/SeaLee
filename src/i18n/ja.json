@@ -1,1 +1,47 @@
+{
+  "langLabel": "🇬🇧 English",
+  "subtitle": "Pi SDK v2.0 • Global Study Abroad & Family Bridge",
+  "mobileView": "Mobile",
+  "wideView": "Wide",
+  "piAuthBtn": "Pi Auth·VIP",
+  "ukCity": "London, UK",
+  "krCity": "Seoul, KR",
+  "hours": "hrs",
+  "dstOn": "BST (Summer ON)",
+  "dstToggle": "Toggle DST",
+  "myStatus": "My Live Status (Shared):",
+  "presetRealtime": "Live",
+  "presetUk6am": "UK 6AM(Sleep)",
+  "presetLecture": "In Class",
+  "presetGolden": "Golden Time",
+  "autoNotice": "Auto-Reply:",
+  "editMsg": "Edit Note",
+  "saveBtn": "Save",
+  "launcherTitle": "Quick Feature Launcher",
+  "launcherSub": "Tap an icon to open full view",
+  "homeBoardTitle": "My Pinned Home Widgets",
+  "showingCount": " active",
+  "editWidgets": "Customize Home",
+  "backToHome": "Back to Home",
+  "dockHome": "Home",
+  "dockWallet": "Pi Wallet",
+  "dockQuests": "Quests",
+  "dockRecipes": "Ticker",
+  "dockCalls": "Safe Call",
+  "dockCalendar": "Calendar",
+  "statusModes": {
+    "lecture": "In Class",
+    "sleeping": "Sleeping",
+    "dnd": "Focus DND",
+    "available": "Available"
+  },
+  "launcherNames": {
+    "wallet": { "name": "Pi Wallet·SDK", "sub": "π Pay & Claim" },
+    "quests": { "name": "AI Quests", "sub": "Daily Tasks & π" },
+    "recipes": { "name": "Recipe Ticker", "sub": "Live Food Trends" },
+    "calls": { "name": "Safe Free Call", "sub": "Timezone Guard" },
+    "calendar": { "name": "Culture Sync", "sub": "UK/KR Holidays" },
+    "analytics": { "name": "Chat Privacy", "sub": "0-Byte On-Device" }
+  }
+}
 
